@@ -229,7 +229,7 @@ def rotmat2Helmholtz(R):
     return Helm(psi, phi, theta)
 
 
-def R1_s():
+def R1_s(symbol_name = 'psi'):
     '''
     Symbolic rotation matrix about the 1-axis, by an angle psi 
 
@@ -244,13 +244,13 @@ def R1_s():
 
     '''
 
-    psi = sympy.Symbol('psi')
+    sym = sympy.Symbol(symbol_name)
 
     return sympy.Matrix([[1,0,0],
-                         [0, sympy.cos(psi), -sympy.sin(psi)],
-                         [0, sympy.sin(psi), sympy.cos(psi)]])
+                         [0, sympy.cos(sym), -sympy.sin(sym)],
+                         [0, sympy.sin(sym), sympy.cos(sym)]])
 
-def R2_s():
+def R2_s(symbol_name = 'phi'):
     '''
     Symbolic rotation matrix about the 2-axis, by an angle phi 
 
@@ -265,13 +265,13 @@ def R2_s():
 
     '''
 
-    phi = sympy.Symbol('phi')
+    sym = sympy.Symbol(symbol_name)
 
-    return sympy.Matrix([[sympy.cos(phi),0, sympy.sin(phi)],
+    return sympy.Matrix([[sympy.cos(sym),0, sympy.sin(sym)],
                          [0,1,0],
-                         [-sympy.sin(phi), 0, sympy.cos(phi)]])
+                         [-sympy.sin(sym), 0, sympy.cos(sym)]])
     
-def R3_s():
+def R3_s(symbol_name = 'theta'):
     '''
     Symbolic rotation matrix about the 3-axis, by an angle theta 
 
@@ -286,10 +286,10 @@ def R3_s():
 
     '''
 
-    theta = sympy.Symbol('theta')
+    sym = sympy.Symbol(symbol_name)
 
-    return sympy.Matrix([[sympy.cos(theta), -sympy.sin(theta), 0],
-                         [sympy.sin(theta), sympy.cos(theta), 0],
+    return sympy.Matrix([[sympy.cos(sym), -sympy.sin(sym), 0],
+                         [sympy.sin(sym), sympy.cos(sym), 0],
                          [0, 0, 1]])
 
 
